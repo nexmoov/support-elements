@@ -1,0 +1,61 @@
+{
+  "pipeline": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "build:staging": {
+      "dependsOn": [
+        "^build:staging"
+      ]
+    },
+    "build-storybook": {
+      "outputs": [
+        "storybook-static/**"
+      ]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "check-types": {
+      "outputs": []
+    },
+    "test": {
+      "outputs": []
+    },
+    "e2e": {
+      "outputs": []
+    },
+    "clean": {
+      "cache": false
+    },
+    "dev": {
+      "cache": false,
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "dev:sdks": {
+      "cache": false,
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "locale-push-demographics": {
+      "outputs": []
+    },
+    "locale-push-local-content": {
+      "outputs": []
+    },
+    "locale-push-lat": {
+      "outputs": []
+    },
+    "locale-invalidate": {
+      "outputs": []
+    },
+    "locale-push-elements": {
+      "outputs": []
+    }
+  }
+}

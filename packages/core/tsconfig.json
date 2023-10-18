@@ -1,0 +1,32 @@
+{
+  "extends": "tsconfig/react-library.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
+    "paths": {
+      "~/localization/*": [
+        "./src/localization/*"
+      ],
+      "~/tracking/*": [
+        "./src/tracking/*"
+      ],
+      "~/ui/*": [
+        "./src/ui/*"
+      ],
+      "~/utils/*": [
+        "./src/utils/*"
+      ]
+    }
+  },
+  "include": [
+    "./src/**/*",
+    "global.d.ts",
+    "./vite-env.d.ts"
+  ],
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules"
+  ]
+}

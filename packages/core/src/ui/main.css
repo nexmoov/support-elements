@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  /* Override base font size */
+  font-size: var(--ll-base-unit);
+}
+
+@layer base {
+  /* 
+   * DEFAULT THEME (LIGHT MODE)
+   */
+  :root {
+    /* This is the Tailwind default */
+    --ll-base-unit: 16px;
+
+    /* COLOURS */
+    --ll-color-primary: theme("colors.teal.600");
+    --ll-color-primary-variant1: theme("colors.teal.700");
+
+    --ll-color-background: theme("colors.white");
+    --ll-color-surface: theme("colors.zinc.100");
+    --ll-color-surface-variant1: theme("colors.zinc.200");
+    --ll-color-surface-variant2: theme("colors.zinc.300");
+
+    --ll-color-on-primary: theme("colors.white");
+    --ll-color-on-primary-variant1: theme("colors.zinc.100");
+    --ll-color-on-background: theme("colors.zinc.950");
+    --ll-color-on-background-variant1: theme("colors.zinc.800");
+    --ll-color-on-surface: theme("colors.zinc.950");
+    --ll-color-on-surface-variant1: theme("colors.zinc.800");
+    --ll-color-placeholder: theme("colors.zinc.500");
+    --ll-color-disabled: theme("colors.zinc.500");
+
+    --ll-color-border: theme("colors.zinc.300");
+
+    --ll-color-link: theme("colors.blue.600");
+
+    --ll-color-error: theme("colors.pink.600");
+
+    /* Can this be deprecated? Maybe the title color can be set to --ll-color-on-background */
+    --ll-sdk-title-color: theme("colors.zinc.950");
+
+    /* SPACINGS */
+    /* 4px default */
+    --ll-spacing-base-unit: var(--ll-base-unit) / 4;
+    /* Deprecated */
+    --ll-spacing-xx-small: calc(var(--ll-spacing-base-unit) * 1);
+    --ll-spacing-x-small: calc(var(--ll-spacing-base-unit) * 2);
+    --ll-spacing-small: calc(var(--ll-spacing-base-unit) * 3);
+    --ll-spacing-medium: calc(var(--ll-spacing-base-unit) * 4);
+    --ll-spacing-large: calc(var(--ll-spacing-base-unit) * 6);
+    --ll-spacing-x-large: calc(var(--ll-spacing-base-unit) * 8);
+    --ll-spacing-xx-large: calc(var(--ll-spacing-base-unit) * 12);
+    --ll-spacing-xxx-large: calc(var(--ll-spacing-base-unit) * 16);
+    --ll-spacing-auto: auto;
+
+    /* SHADOWS */
+    /* Deprecated */
+    --ll-shadow-small: theme("dropShadow.sm");
+    --ll-shadow-medium: theme("dropShadow.md");
+
+    /* BORDERS */
+    /* 4px default */
+    --ll-border-radius-base-unit: var(--ll-base-unit) / 4;
+    /* Deprecated */
+    --ll-border-radius-small: calc(var(--ll-border-radius-base-unit) * 1);
+    --ll-border-radius-medium: calc(var(--ll-border-radius-base-unit) * 2);
+    --ll-border-radius-large: calc(var(--ll-border-radius-base-unit) * 4);
+
+    /* FONT WEIGHTS */
+    --ll-font-weight-light: theme("fontWeight.light");
+    --ll-font-weight-normal: theme("fontWeight.normal");
+    --ll-font-weight-medium: theme("fontWeight.medium");
+    --ll-font-weight-semibold: theme("fontWeight.semibold");
+    --ll-font-weight-bold: theme("fontWeight.bold");
+
+    /* FONT SIZES */
+    --ll-font-size-base: calc(var(--ll-base-unit) / 1.333);
+
+    --ll-font-size-h1: calc(var(--ll-font-size-base) * 4);
+    --ll-font-size-h2: calc(var(--ll-font-size-base) * 3);
+    --ll-font-size-h3: calc(var(--ll-font-size-base) * 2);
+    --ll-font-size-h4: calc(var(--ll-font-size-base) * 1.667);
+    --ll-font-size-h5: calc(var(--ll-font-size-base) * 1.5);
+    --ll-font-size-h6: calc(var(--ll-font-size-base) * 1.333);
+    --ll-font-size-p: calc(var(--ll-font-size-base) * 1.167);
+    --ll-font-size-caption-1: var(--ll-font-size-base);
+    --ll-font-size-caption-2: calc(var(--ll-font-size-base) * 0.833);
+
+    /* FONT FAMILY */
+    --ll-font-family: Inter, sans-serif;
+    --ll-font-family-mono: Consolas, Andale Mono WT, Andale Mono, Lucida Console,
+      Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono,
+      Nimbus Mono L, Monaco, Courier New, Courier, monospace;
+  }
+
+  /* 
+   * NIGHT THEME (DARK MODE)
+   */
+  html[data-theme="night"] {
+    --ll-color-primary: theme("colors.teal.500");
+    --ll-color-primary-variant1: theme("colors.teal.600");
+
+    --ll-color-background: theme("colors.zinc.900");
+    --ll-color-surface: theme("colors.zinc.800");
+    --ll-color-surface-variant1: theme("colors.zinc.700");
+    --ll-color-surface-variant2: theme("colors.zinc.600");
+
+    --ll-color-on-primary: theme("colors.white");
+    --ll-color-on-primary-variant1: theme("colors.teal.50");
+    --ll-color-on-background: theme("colors.zinc.50");
+    --ll-color-on-background-variant1: theme("colors.zinc.100");
+    --ll-color-on-surface: theme("colors.zinc.200");
+    --ll-color-on-surface-variant1: theme("colors.zinc.300");
+    --ll-color-placeholder: theme("colors.zinc.600");
+    --ll-color-disabled: theme("colors.zinc.400");
+
+    --ll-color-border: theme("colors.zinc.700");
+
+    --ll-color-link: theme("colors.blue.600");
+  }
+}

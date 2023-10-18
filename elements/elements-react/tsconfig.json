@@ -1,0 +1,14 @@
+{
+  "extends": "tsconfig/react-library.json",
+  "compilerOptions": {
+    "outDir": "types",
+    "declaration": true,
+    "declarationMap": true,
+    "types": ["cypress", "jest", "node"],
+    "paths": {
+      "~/*": ["../../elements/elements-react/src/*"]
+    }
+  },
+  "include": ["./src/**/*", "./cypress.d.ts", "global.d.ts"],
+  "exclude": ["node_modules"]
+}

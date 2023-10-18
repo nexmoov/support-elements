@@ -1,0 +1,145 @@
+{
+  "name": "@local-logic/core",
+  "version": "0.3.2",
+  "author": "Local Logic",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "ISC",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.cjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./localization": {
+      "import": "./dist/localization/index.js",
+      "require": "./dist/localization/index.cjs"
+    },
+    "./ui": {
+      "import": "./dist/ui/index.js",
+      "require": "./dist/ui/index.cjs"
+    },
+    "./utils": {
+      "import": "./dist/utils/index.js",
+      "require": "./dist/utils/index.cjs"
+    },
+    "./tailwind.config.cjs": "./tailwind.config.cjs",
+    "./postcss.config.cjs": "./postcss.config.cjs",
+    "./style.css": "./dist/style.css"
+  },
+  "typesVersions": {
+    "*": {
+      "types": [
+        "./dist/index.d.ts"
+      ],
+      "localization": [
+        "./dist/localization/index.d.ts"
+      ],
+      "ui": [
+        "./dist/ui/index.d.ts"
+      ],
+      "utils": [
+        "./dist/utils/index.d.ts"
+      ]
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "./dist/**/*",
+    "tailwind.config.js",
+    "postcss.config.js"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:staging": "vite build --mode=staging",
+    "test": "jest --passWithNoTests",
+    "stats": "STATS=1 vite build",
+    "size": "yarn run build && size-limit",
+    "lint": "TIMING=1 eslint --ext .js,.jsx,.ts,.tsx .",
+    "check-types": "tsc --project ./tsconfig.json --noEmit",
+    "prepublishOnly": "yarn run build",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "styled-components": "^6.0.0-rc.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@jest/globals": "^28.1.1",
+    "@local-logic/eslint-config": "*",
+    "@storybook/addon-actions": "^7.0.0-beta.34",
+    "@storybook/addon-essentials": "^7.0.0-beta.34",
+    "@storybook/addon-interactions": "^7.0.0-beta.34",
+    "@storybook/addon-links": "^7.0.0-beta.34",
+    "@storybook/addon-styling": "^1.0.8",
+    "@storybook/react": "^7.0.0-beta.34",
+    "@storybook/react-webpack5": "^7.0.0-beta.34",
+    "@storybook/testing-library": "^0.0.14-next.1",
+    "@svgr/webpack": "^6.2.1",
+    "@transifex/native": "^5.2.0",
+    "@types/chart.js": "^2.9.37",
+    "@types/jest": "^29.2.5",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.4",
+    "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "@vitejs/plugin-react": "^2.1.0",
+    "autoprefixer": "^10.4.14",
+    "babel-jest": "^28.1.0",
+    "babel-loader": "^8.2.4",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-import": "^2.25.4",
+    "file-loader": "^6.2.0",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "jestconfig": "*",
+    "postcss": "^8.4.24",
+    "prettier": "^2.5.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "rollup-plugin-visualizer": "^5.8.3",
+    "storybook": "^7.0.0-beta.34",
+    "styled-components": "^6.0.0-rc.3",
+    "tailwindcss": "^3.3.3",
+    "ts-jest": "^27.1.3",
+    "tsconfig": "*",
+    "tsconfig-paths-webpack-plugin": "^4.1.0",
+    "typescript": "^4.5.3",
+    "vite": "^3.2.7",
+    "vite-plugin-dts": "^1.2.0",
+    "vite-plugin-svgr": "^2.2.0",
+    "webpack": "5"
+  },
+  "dependencies": {
+    "@heroicons/react": "^1.0.6",
+    "@local-logic/client": "*",
+    "@radix-ui/react-checkbox": "^1.0.3",
+    "@radix-ui/react-label": "^1.0.0",
+    "@radix-ui/react-popover": "^1.0.0",
+    "@radix-ui/react-select": "^1.0.0",
+    "@radix-ui/react-slider": "^1.0.0",
+    "@radix-ui/react-switch": "^1.0.0",
+    "@turf/turf": "^6.5.0",
+    "chart.js": "^4.2.0",
+    "framer-motion": "^6.2.8",
+    "local-storage-fallback": "^4.1.2",
+    "react-chartjs-2": "^5.2.0",
+    "react-is": "^18.1.0",
+    "require-from-string": "^2.0.2",
+    "stylis": "^4.1.3",
+    "yup": "^v1.0.0-beta.2"
+  }
+}
