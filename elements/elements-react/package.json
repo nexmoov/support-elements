@@ -98,7 +98,7 @@
     "tsconfig": "*",
     "tslib": "^2.3.1",
     "typescript": "^4.6.2",
-    "vite": "^3.2.7",
+    "vite": "^3.2.8",
     "vite-plugin-dts": "^1.2.0",
     "vite-plugin-svgr": "^2.2.0",
     "vite-svg-loader": "^3.4.0"
